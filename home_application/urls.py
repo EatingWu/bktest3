@@ -13,7 +13,14 @@ from django.conf.urls import patterns
 
 urlpatterns = patterns(
     'home_application.views',
-    (r'^$', 'home'),
+    #(r'^$', 'home'),
+    (r'^$', 'student_manage'),
+    #(r'^student_manage/$', 'student_manage'),
+    (r'^search_student/$', 'search_student'),
+    (r'^add_student/$', 'add_student'),
+    (r'^edit_student/$', 'edit_student'),
+    (r'^del_student/$', 'del_student'),
+    (r'^export_student/$', 'export_student'),
     (r'^dev-guide/$', 'dev_guide'),
     (r'^contactus/$', 'contactus'),
 )

@@ -10,3 +10,12 @@ See the License for the specific language governing permissions and limitations 
 """
 
 # from django.db import models
+from django.db import models
+
+class Studentinfo(models.Model):
+    age = models.IntegerField(default=18)
+    name = models.CharField(max_length=20)
+    gender = models.CharField(max_length=20)
+
+    def toDic(self):
+        return dict([(attr, getattr(self, attr)) for attr in [f.name for f in self._meta.fields]])

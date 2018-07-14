@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <!-- 若您需要使用Kendo UI Professional，请联系版权人获得合法的授权或许可。 -->
+    <!-- Bootstrap css -->
+    <link href="https://magicbox.bkclouds.cc/static_api/v3/assets/bootstrap-3.3.4/css/bootstrap.min.css" rel="stylesheet">
+    <!-- kendo ui css -->
+    <link href="https://magicbox.bkclouds.cc/static_api/v3/assets/kendoui-2015.2.624/styles/kendo.common.min.css" rel="stylesheet">
+    <link href="https://magicbox.bkclouds.cc/static_api/v3/assets/kendoui-2015.2.624/styles/kendo.default.min.css" rel="stylesheet">
+    <!-- font-awesome -->
+    <link href="https://magicbox.bkclouds.cc/static_api/v3/assets/fontawesome/css/font-awesome.css" rel="stylesheet">
+    <!--蓝鲸提供的公用样式库 -->
+    <link href="https://magicbox.bkclouds.cc/static_api/v3/bk/css/bk.css" rel="stylesheet">
+    <link href="https://magicbox.bkclouds.cc/static_api/v3/bk/css/bk_pack.css" rel="stylesheet">
+    <!--弹窗 ui css -->
+    <link href="https://magicbox.bkclouds.cc/static_api/v3/assets/artDialog-6.0.4/css/ui-dialog.css" rel="stylesheet">
+    <!-- 如果要使用Bootstrap的js插件，必须先调入jQuery -->
+    <script src="https://magicbox.bkclouds.cc/static_api/v3/assets/js/jquery-1.10.2.min.js"></script>
+    <!-- 包括所有bootstrap的js插件或者可以根据需要使用的js插件调用　-->
+    <script src="https://magicbox.bkclouds.cc/static_api/v3/assets/echarts-2.0/echarts-all.js"></script>
+    <script src="https://magicbox.bkclouds.cc/static_api/v3/assets/bootstrap-3.3.4/js/bootstrap.min.js"></script>
+    <!-- 包括所有kendoui的js插件或者可以根据需要使用的js插件调用　-->
+    <script src="https://magicbox.bkclouds.cc/static_api/v3/assets/kendoui-2015.2.624/js/kendo.all.min.js"></script>
+    <script src="https://magicbox.bkclouds.cc/static_api/v3/assets/echarts-2.0/echarts-all.js"></script>
+    <script src="https://magicbox.bkclouds.cc/static_api/v3/bk/js/bk.js"></script>
+    <!-- 弹窗的js插件调用　-->
+    <script src="https://magicbox.bkclouds.cc/static_api/v3/assets/artDialog-6.0.4/dist/dialog-min.js"></script>
+    <!-- 分页的js插件调用　-->
+    <script src="https://magicbox.bkclouds.cc/static_api/v3/assets/jPages-0.7/js/jPages.js"></script>
+    <!-- 数据埋点统计 -->
+    <script src="https://magicbox.bkclouds.cc/static_api/analysis.js"></script>
+    <script type="text/javascript">
+	    	var app_id = "${APP_ID}";
+			var site_url = "${SITE_URL}";	  // app的url前缀,在ajax调用的时候，应该加上该前缀
+			var static_url = "${STATIC_URL}"; // 静态资源前缀
+    </script>
+    <!-- 以下两个插件用于在IE8以及以下版本浏览器支持HTML5元素和媒体查询，如果不需要用可以移除 -->
+    <!--[if lt IE 9]><script src="https://magicbox.bkclouds.cc/static_api/v3/assets/js/html5shiv.min.js"></script><script src="https://magicbox.bkclouds.cc/static_api/v3/assets/js/respond.min.js"></script><![endif]-->
+</head>
+
+<body class="bg-white" data-bg-color="bg-white">
+    <div class="king-page-box">
+        <div class="king-layout1-header">
+            <nav class="">
+                <div style="overflow:hidden; z-index: inherit;" class="navbar king-horizontal-nav1  f14">
+                    <div class="navbar-container">
+                        <div class="navbar-header pull-left">
+                            <a class="navbar-brand" href="javascript:;">
+                                <img src="https://magicbox.bkclouds.cc/static_api/v3/bk/images/logo.png" class="logo"> </a>
+                        </div>
+                        <ul class="nav navbar-nav pull-left m0">
+                        </ul>
+                        <div class="navbar-header pull-right">
+                            <ul class="nav">
+                                <li class="user-info">
+                                    <a href="javascript:;">
+                                        <img class="img-rounded" src="https://magicbox.bkclouds.cc/static_api/v3/components/horizontal_nav1/images/avatar.png">
+                                        <span>admin</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <div class="king-layout1-main clearfix">
+            <!-- sidebar start -->
+            <div class="king-layout1-sidebar" style="width:216px;">
+                <nav style="overflow:hidden;">
+                    <div class="king-vertical-nav9    f14">
+                        <div class="navbar-collapse navbar-hov">
+                            <ul class="nav navbar-nav side-nav">
+                                <li class="active">
+                                    <a href="javascript:void(0);"> <i class="fa fa-dashboard ">                            </i>
+                                        <span>首页</span> <i class="fa fa-fw "></i> </a>
+                                    <ul id="demo" class="collapse"> </ul>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);"> <i class="fa fa-wrench ">                            </i>
+                                        <span>表格</span> <i class="fa fa-fw "></i> </a>
+                                    <ul id="demo" class="collapse"> </ul>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);"> <i class="fa fa-edit ">                            </i>
+                                        <span>表单</span> <i class="fa fa-fw "></i> </a>
+                                    <ul id="demo" class="collapse"> </ul>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);"> <i class="fa fa-ellipsis-h ">                            </i>
+                                        <span>排版</span> <i class="fa fa-fw "></i> </a>
+                                    <ul id="demo" class="collapse"> </ul>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);"> <i class="fa fa-wrench ">                            </i>
+                                        <span>布局</span> <i class="fa fa-fw "></i> </a>
+                                    <ul id="demo" class="collapse"> </ul>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);"> <i class="fa fa-arrows-v ">                            </i>
+                                        <span>下拉菜单</span> <i class="fa fa-fw fa-caret-down"></i> </a>
+                                    <ul id="demo" class="collapse">
+                                        <li><a href="javascript:void(0);">子菜单1</a></li>
+                                        <li><a href="javascript:void(0);">子菜单2</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+            <!-- sidebar end -->
+            <!-- content start -->
+            <div class="king-content-wrap">
+                <div class="king-layout1-content" style="margin-left: 216px;">
+                    <div class="panel panel-default table7_demo king-table7-demo3">
+                        <div class="panel-heading">
+                            学生列表
+                        </div>
+                        <div class="panel-body">
+                            <div class="king-wrapper clearfix">
+                                <form class="form-inline king-search-form king-no-bg pull-left">
+
+                                    <div class="form-group">
+                                        <div class="input-group king-input-group">
+                                            <input class="form-control pl30 king-form-control" placeholder="请输入名称关键字" type="text" id="nameid">
+                                            <span class="glyphicon glyphicon-search form-control-feedback king-form-control-feedback"></span>
+                                        </div>
+                                    </div>
+
+                                </form>
+                                <a class="king-btn king-btn-new pull-right" onclick="export_student()">
+                                    导出列表
+                                </a>
+                                <a class="king-btn king-btn-new pull-right" onclick="add_student()"style="margin-right: 100px;">
+                                    添加学生
+                                </a>
+                                <div style="float: left; margin-left: 100px;">
+                                    <button type="button" onclick="search_student()" class="king-btn-demo king-btn king-primary">
+                                        <i class="fa fa-search btn-icon"></i>搜索
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="jpages_demo1">
+                            <table class="table table-hover mb0" id='mydata'>
+                                <thead>
+                                <tr class="active">
+                                    <th style="width:50px; text-align: center;">ID</th>
+                                    <th style="min-width:155px; text-align: center;">学生名称</th>
+                                    <th style="min-width:155px; text-align: center;">年龄</th>
+                                    <th style="width:155px; text-align: center;">性别</th>
+                                    <th style="width:565px; text-align: center;">操作</th>
+                                </tr>
+                                </thead>
+                                <tbody id="datas">
+                                % for i in data:
+                                <tr align="center">
+                                    <td>${i.id}</td>
+                                    <td>${i.name}</td>
+                                    <td>${i.age}</td>
+                                    <td>${i.gender}</td>
+                                    <td>
+                                        <button class="king-btn king-warning" id="editid"
+                                                onclick="edit_student('${i.id}','${i.name}','${i.age}','${i.gender}')">编辑
+                                        </button>
+                                        <button class="king-btn king-danger" id="deleteid" onclick="del_student('${i.id}')">
+                                            删除
+                                        </button>
+                                    </td>
+                                </tr>
+                                % endfor
+                                </tbody>
+                                <tfoot>
+                                <tr>
+                                    <td colspan="5">
+                                        <div class="holder"></div>
+                                    </td>
+                                </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- content end -->
+        </div>
+    </div>
+
+</body>
+<script>
+        $(function(){
+           var li = $('.navbar-nav li');
+           li.each(function(){
+           $(this).click(function(){
+             if( $(this).hasClass('opens')){
+               $(this).find('ul').slideUp(350);
+               $(this).removeClass('opens');
+             }else{
+               $(this).find('ul').slideDown(350);
+               $(this).addClass('opens');
+                }
+             })
+            });
+        })
+
+        // using jQuery
+        function getCookie(name) {
+            var cookieValue = null;
+            if (document.cookie && document.cookie !== '') {
+                var cookies = document.cookie.split(';');
+                for (var i = 0; i < cookies.length; i++) {
+                    var cookie = jQuery.trim(cookies[i]);
+                    // Does this cookie string begin with the name we want?
+                    if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                        break;
+                    }
+                }
+            }
+            return cookieValue;
+        }
+        var csrftoken = getCookie('csrftoken');
+        function csrfSafeMethod(method) {
+            // these HTTP methods do not require CSRF protection
+            return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
+        }
+        $.ajaxSetup({
+            beforeSend: function(xhr, settings) {
+                if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
+                    xhr.setRequestHeader("X-CSRFToken", csrftoken);
+                }
+            }
+        });
+
+        var student_data = [];
+        function search_student() {
+            var name_info = $("#nameid").val();
+            $.post(site_url + 'search_student/', {
+                'name_info': name_info
+            }, function (res) {
+                if (res.result) {
+                    $("#mydata").kendoGrid({
+                        columns: [
+                            {field: "id", width: 50},
+                            {field: "name", width: 155},
+                            {field: "age", width: 155},
+                            {field: "gender", width: 155},
+                            {
+                                template: "<button class='king-btn king-warning' style='cursor: pointer;' onclick='edit_student(\"\#= id \#\",\"\#= name \#\",\"\#= age \#\",\"\#= gender \#\") '>编辑</button>&emsp;" +
+                                "<button class='king-btn king-danger' style='cursor: pointer;' onclick='del_student(\"\#= id \#\"" + ",this)'>删除</button>"
+                            }
+                        ],
+                        dataSource: {
+                            data: res.student
+                        }
+                    });
+
+                }
+            }, 'json');
+        }
+
+        function add_student() {
+            var d = dialog({
+                width: 600,
+                height: 180,
+                title: "添加学生",
+                content: '<div class="king-block-content">\
+                <form class="form-horizontal">\
+                <div class="form-group">\
+                        <label for="inputEmail3" class="col-sm-3 control-label">请选择性别：</label>\
+                        <div class="col-sm-7">\
+                            <select name="" id="genderid" class="form-control">\
+                                <option value=""></option>\
+                                <option value="female">female</option>\
+                                <option value="male">male</option>\
+                            </select>\
+                        </div>\
+                    </div>\
+                    <div class="form-group">\
+                        <label for="inputCount3" class="col-sm-3 control-label">姓名：</label>\
+                        <div class="col-sm-7">\
+                            <input type="text" class="form-control" autocomplete="off" id="inputCount1" placeholder="请输入姓名">\
+                        </div>\
+                    </div>\
+                    <div class="form-group">\
+                        <label for="inputCount3" class="col-sm-3 control-label">年龄：</label>\
+                        <div class="col-sm-7">\
+                            <input type="text" class="form-control" autocomplete="off" id="inputCount2" placeholder="请输入年龄">\
+                        </div>\
+                    </div>\
+                    </form>\
+                    </div>',
+                fixed: true,
+                okValue: '确定',
+                ok: function () {
+                    var gender_info = $("#genderid").val();
+                    var name_info = $("#inputCount1").val();
+                    var age_info = $("#inputCount2").val();
+                    if (gender_info == '' || gender_info == null || name_info == '' || name_info == null || age_info == '' || age_info == null) {
+                        alert("请填写完整内容");
+                        return false;
+                    } else {
+                        $.post(site_url + 'add_student/', {
+                            'gender_info': $("#genderid").val(),
+                            'name_info': $("#inputCount1").val(),
+                            'age_info': $("#inputCount2").val()
+                        }, function (res) {
+                            if (res.result) {
+                                alert("添加成功！");
+                                window.location.reload();
+                            }
+                        }, 'json');
+                    }
+                },
+                cancelValue: '取消',
+                cancel: function () {
+                    //do something
+                }
+            });
+            d.showModal()
+        }
+
+        function edit_student(id, name, age, gender) {
+            var d = dialog({
+                width: 600,
+                height: 180,
+                title: "修改学生",
+                content: '<div class="king-block-content">\
+                <form class="form-horizontal">\
+                <div class="form-group">\
+                        <label for="inputEmail3" class="col-sm-3 control-label">请选择性别：</label>\
+                        <div class="col-sm-7">\
+                            <select name="" id="genderid" class="form-control">\
+                                <option value=""></option>\
+                                <option value="female">female</option>\
+                                <option value="male">male</option>\
+                            </select>\
+                        </div>\
+                    </div>\
+                    <div class="form-group">\
+                        <label for="inputCount3" class="col-sm-3 control-label">姓名：</label>\
+                        <div class="col-sm-7">\
+                            <input type="text" class="form-control" autocomplete="off" id="inputCount1" placeholder="请输入姓名">\
+                        </div>\
+                    </div>\
+                    <div class="form-group">\
+                        <label for="inputCount3" class="col-sm-3 control-label">年龄：</label>\
+                        <div class="col-sm-7">\
+                            <input type="text" class="form-control" autocomplete="off" id="inputCount2" placeholder="请输入年龄">\
+                        </div>\
+                    </div>\
+                    </form>\
+                    </div>',
+                fixed: true,
+                onshow: function (arguments) {
+                    $("#inputCount1").val(name);
+                    $("#inputCount2").val(age);
+                    $("#genderid").val(gender)
+                },
+                okValue: '确定',
+                ok: function () {
+                    var gender_info = $("#genderid").val();
+                    var name_info = $("#inputCount1").val();
+                    var age_info = $("#inputCount2").val();
+                    if (gender_info == '' || gender_info == null || name_info == '' || name_info == null || age_info == '' || age_info == null) {
+                        alert("请填写完整内容");
+                        return false;
+                    } else {
+                        $.post(site_url + 'edit_student/', {
+                            'gender_info': $("#genderid").val(),
+                            'name_info': $("#inputCount1").val(),
+                            'age_info': $("#inputCount2").val(),
+                            'id': id
+                        }, function (res) {
+                            if (res.result) {
+                                alert("修改成功！");
+                                window.location.reload();
+                            }
+                        }, 'json');
+                    }
+                },
+                cancelValue: '取消',
+                cancel: function () {
+                    //do something
+                }
+            });
+            d.showModal();
+        }
+
+        function del_student(id) {
+            var d = dialog({
+                width: 260,
+                height: 80,
+                title: "删除学生",
+                content: '确认要删除该学生吗？',
+                fixed: true,
+
+                okValue: '确定',
+                ok: function () {
+
+                    $.post(site_url + 'del_student/', {
+                        'id': id
+                    }, function (res) {
+                        if (res.result) {
+                            alert("删除成功！");
+                            window.location.reload();
+                        }
+                    }, 'json');
+                },
+
+                cancelValue: '取消',
+                cancel: function () {
+                    //do something
+                }
+            });
+            d.showModal();
+        }
+
+        $("#jpages_demo1 .holder").jPages({
+            containerID: "datas",
+            previous: "←",
+            next: "→",
+            perPage: 3,
+            delay: 5
+        });
+
+        var keyCollections_cn = ['ID', '学生名称', '年龄', '性别'];
+        var keyCollections_en = ['id', 'name', 'age', 'gender'];
+
+        function export_student() {
+
+            $.post(site_url + 'export_student/', {}, function (res) {
+                if (res.result) {
+                    data2 = res.student;
+
+                    export_csv(data2)
+                }
+            }, 'json');
+        }
+
+        var swapLastCommaForNewline = function (strKey) {
+            var newStr = strKey.substr(0, strKey.length - 1);
+            return newStr + "\n";
+        };
+
+        var StringifyCSVData = function (strKey) {
+            if (strKey == null) {
+                return '';
+            }
+            if (typeof (strKey) === 'number') {
+                return '' + strKey;
+            }
+            if (typeof (strKey) === 'boolean') {
+                return (strKey ? 'TRUE' : 'FALSE');
+            }
+            if (typeof (strKey) === 'string') {
+                return strKey.replace(/"/g, '""');
+            }
+            return JSON.stringify(strKey).replace(/"/g, '""');
+        };
+
+        var export_csv = function (data) {
+            var csvFileDatas = "";
+            for (var k in keyCollections_cn) {
+                csvFileDatas += '"' + StringifyCSVData(keyCollections_cn[k]) + '",';
+            }
+            csvFileDatas = swapLastCommaForNewline(csvFileDatas);
+            for (var gridRow in data) {
+                for (var j = 0; j < keyCollections_en.length; j++) {
+                    var currentReowCell = data[gridRow][keyCollections_en[j]];
+                    csvFileDatas += '"' + StringifyCSVData(currentReowCell) + '",';
+                }
+                csvFileDatas = swapLastCommaForNewline(csvFileDatas);
+            }
+            var downloadLink = document.createElement("a");
+            var url = "data:text/csv;charset=UTF-8,\uFEFF" + encodeURIComponent(csvFileDatas);
+            downloadLink.href = url;
+            downloadLink.download = "data.csv";
+            document.body.appendChild(downloadLink);
+            downloadLink.click();
+            document.body.removeChild(downloadLink);
+        };
+
+</script>
+</html>
